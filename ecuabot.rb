@@ -11,8 +11,8 @@ client = Twitter::REST::Client.new do |config|
 end
 
 client.search("#Ecuador -RT").take(1).each do |tweet|
-puts tweet.user.screen_name
-puts tweet.text
+# puts tweet.user.screen_name
+# puts tweet.text
 client.retweet(tweet)
 client.follow(tweet.user.screen_name)
 end
